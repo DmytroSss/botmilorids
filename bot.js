@@ -1447,7 +1447,8 @@ bot.on('voiceStateUpdate', async (oldState, newState) => {
 		console.log(`1.${err.name}\n2.${err.message}\n3.${err.stack}`);
 	}
 });
+require('dotenv').config() 
 process.on('unhandledRejection', (reason) => { console.log(reason) })
-bot.login(token);
+bot.login(process.env.TOKEN);
 const disbut = require('discord-buttons')
 disbut(bot)
